@@ -1,6 +1,6 @@
 # Group
 
-A SNS for Telegram Group
+An SNS for Telegram Group
 
 ## Installation
 
@@ -28,7 +28,9 @@ A SNS for Telegram Group
 
         [session]
         prefix = group
+5. Create Database and specify Collation `utf8mb4_unicode_ci`
 5. Run SQL Commands in /sql/cmd.sql
+
 
 ## Update
 

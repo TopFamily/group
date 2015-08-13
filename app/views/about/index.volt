@@ -37,7 +37,7 @@
     </div>
     <div class="col-md-6">
         <h2>Hosting</h2>
-        <p>Hosted on Top family's Server, maintained by Kingsley Huang</p>
+        <p>Hosted on Top family's Server, maintained by <a href="https://about.me/flywithinsun">Kingsley Huang</a></p>
         <h2>Contributors</h2>
         <p><a href="https://about.me/SkyZH">SkyZH</a>, a programmer unknown about code.</p>
     </div>
