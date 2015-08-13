@@ -9,7 +9,7 @@ A SNS for Telegram Group
 3. Enable Rewrite Module
 4. Edit /app/config/config.ini
     Example:
-    
+
         [database]
         adapter  = Mysql
         host     = localhost
@@ -28,3 +28,14 @@ A SNS for Telegram Group
 
         [session]
         prefix = group
+5. Run SQL Commands in /sql/cmd.sql
+
+## Update
+
+1. Run `git fetch && git merge origin/master master`
+
+2. Run New SQL Commands in /sql/cmd.sql to update database
+
+## Customize
+
+* You can add analytics code in `/app/views/partials/stat_plugin.volt` as HTML code.
