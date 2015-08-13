@@ -9,6 +9,7 @@ A SNS for Telegram Group
 3. Enable Rewrite Module
 4. Edit /app/config/config.ini
     Example:
+    
         [database]
         adapter  = Mysql
         host     = localhost
