@@ -1,3 +1,36 @@
 body {
     margin-top: 80px;
 }
+
+.grid-sizer,
+.grid-item {
+    float:left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.gutter-sizer {
+    width: 0%;
+}
+@media screen and (min-width: 768px) {
+    .grid-sizer,
+    .grid-item {
+        float:left;
+        width: 49%;
+        margin-bottom: 10px;
+    }
+    .gutter-sizer {
+        width: 2%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .grid-sizer,
+    .grid-item {
+        float:left;
+        width: 22%;
+        margin-bottom: 10px;
+    }
+    .gutter-sizer {
+        width: 2%;
+    }
+}

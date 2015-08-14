@@ -18,7 +18,7 @@
     <br/>
 </div>
 
-<div class="container">
+<div class="container" id="main_container">
     {{ content() }}
     <hr>
     <footer>

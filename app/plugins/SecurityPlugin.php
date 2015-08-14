@@ -28,32 +28,16 @@ class SecurityPlugin extends Plugin
 
             $aclResources = array(
                 'admin' => array(
-                    'problemset'    => array("new", "edit", "data", "save", "remove"),
-                    'data'          => array("index", "new", "edit", "remove", 'scan'),
-                    'permission'    => array("index", "new", "edit", "remove"),
-                    'group'    => array("index", "new", "edit", "remove"),
-                    'assets'    => array("index", "new", "edit", "remove"),
-                    'notification' => array("sendall"),
-                    'profile'      => array("group")
                 ),
                 'user' => array(
-                    'notification'  => array("index", "send", "remove"),
-                    'status'        => array("submit"),
-                    'profile'       => array("password", "avatar", "edit")
+                    'profile'       => array("index", "edit")
                 ),
                 'public' => array(
-                    'about'      => array("index"),
-                    'profile'    => array("index", "view"),
                     'index'      => array('index'),
                     'about'      => array('index'),
                     'register'   => array('index'),
                     'errors'     => array('show401', 'show404', 'show500'),
-                    'session'    => array('index', 'start', 'end'),
-                    'problemset' => array("index", "view", "search"),
-                    'status'     => array("index", "view", "search"),
-                    'rank'       => array("index"),
-                    'watcherapi' => array("task", "data", "code", "verify", "status", "post"),
-                    'help'       => array("index", "view")
+                    'session'    => array('index', 'start', 'end')
                 )
             );
 
@@ -96,9 +80,9 @@ class SecurityPlugin extends Plugin
         if (!$auth){
             $role = "Guest";
         } else {
-            if($auth["groupid"] == 1) {
+            if(Group::isAdmin($auth["groupid"])) {
                 $role = "Admin";
-            } elseif ($auth["groupid"] == 2) {
+            } elseif (Group::isUser($auth["groupid"])) {
                 $role = "User";
             }
         }

@@ -55,4 +55,10 @@ class User extends Model {
             "uid = :uid:", 'bind' => array('uid' => $uid)));
         return $user;
     }
+
+
+    public function Permission_CanEditAll() {
+        echo $this->groupid;
+        return Group::Permission_CanEditAll($this->groupid);
+    }
 }

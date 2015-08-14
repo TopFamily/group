@@ -43,4 +43,14 @@ $(document).on('pjax:end' , function() {
     timeout_flash = setTimeout(function() {
         $("#flashcontainer").slideUp(500);
     }, 5000);
+    var $gird = $('.grid').masonry({
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        isResizeBound: true
+    });
+    $grid.imagesLoaded().progress(function() {
+        $grid.masonry('layout');
+    });
 });

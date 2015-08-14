@@ -1,3 +1,5 @@
+{{ content() }}
+
 <div class="row">
     <div class="col-xs-12" align="right">
         <p>
@@ -11,7 +13,7 @@
     <h1>Profile::{{user.username}}</h1>
 </div>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-sm-offset-3">
         {{ partial("partials/card/fullcard", ["user": user]) }}
     </div>
 </div>
