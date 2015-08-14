@@ -30,7 +30,7 @@ class SecurityPlugin extends Plugin
                 'admin' => array(
                 ),
                 'user' => array(
-                    'profile'       => array("index", "edit")
+                    'profile'       => array("index", "edit", "view")
                 ),
                 'public' => array(
                     'index'      => array('index'),
