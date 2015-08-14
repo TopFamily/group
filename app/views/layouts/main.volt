@@ -23,9 +23,12 @@
     <hr>
     <footer>
         <ul class="list-inline">
-            <li><small>Powered by Group, an SNS for Telegram Group.</small></li>
+            <li><small>Powered by Group, an SNS for Telegram Group under Apache License V2.0.</small></li>
             <li><small>{{ link_to('about', 'About') }}</small></li>
             <li><small><a href="mailto:iSkyZH@gmail.com">Feedback</a></small></li>
+        </ul>
+        <ul class="list-inline">
+            <li><small>All contents on this site are under CC BY-NC-SA 4.0.</small></li>
         </ul>
     </footer>
 </div>

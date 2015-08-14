@@ -22,3 +22,8 @@ CREATE TABLE `usercard` (
     uid int(11) NOT null,
     PRIMARY KEY (uid)
 );
+
+# 2015-8-14 Add Usercard Infomation
+
+ALTER TABLE `usercard` ADD name varchar(50);
+ALTER TABLE `usercard` ADD description text; 

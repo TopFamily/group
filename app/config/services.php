@@ -11,6 +11,7 @@ use Phalcon\Flash\Session as FlashSession;
 use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Cache\Frontend\Output as OutputFrontend;
 use Phalcon\Cache\Backend\Memcache as MemcacheBackend;
+use Phalcon\Crypt;
 
 $di = new FactoryDefault();
 
@@ -26,6 +27,15 @@ $di->set('dispatcher', function() use ($di) {
 
     return $dispatcher;
 });
+
+$di->set('crypt', function () use ($config){
+
+    $crypt = new Crypt();
+
+    $crypt->setKey($config->crypt->key);
+
+    return $crypt;
+}, true);
 
 $di->set('url', function() use ($config){
     $url = new UrlProvider();

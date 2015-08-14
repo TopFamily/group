@@ -14,11 +14,28 @@ class Elements extends Component{
             'action' => 'index'
         )
     );
+
     private $navbar_right_user = array(
         '.0' => array(
-            'caption' => '<img src="%s" class="img-rounded" width="22px" style="margin-top: -4px;"></img>%s',
+            'caption' => '<img src="%s" class="img-rounded" width="22px" style="margin-top: -4px;"></img>',
             'class'   => "dropdown",
             "list"    => array(
+                '.info' => array(
+                    'class' => 'disabled',
+                    'caption' => "Signed in as <strong>%s</strong>"
+                ),
+                '.div0' => array(
+                    'class' => 'divider',
+                    'caption' => ''
+                ),
+                'profile' => array(
+                    'caption' => '<span class="glyphicon glyphicon-user"></span> Profile',
+                    'action' => 'index'
+                ),
+                '.div1' => array(
+                    'class' => 'divider',
+                    'caption' => ''
+                ),
                 'session' => array(
                     'caption' => '<span class="glyphicon glyphicon-log-out"></span> Log Out',
                     'action' => 'end'
@@ -37,7 +54,7 @@ class Elements extends Component{
     );
     public function getDropdown($elementArr) {
         echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">',
-            sprintf($elementArr["caption"], $this->auth["avatar"], $this->auth["username"]),
+            sprintf($elementArr["caption"], $this->auth["avatar"]),
             ' <span class="caret"></span></a>';
         echo '<ul class="dropdown-menu">';
         foreach ($elementArr["list"] as $controller => $option) {
@@ -79,6 +96,11 @@ class Elements extends Component{
     public function getMenu() {
         $this->auth = $this->session->get('auth');
         if ($this->auth) {
+            $this->navbar_right_user[".0"]["list"][".info"]["caption"] =
+                sprintf(
+                    $this->navbar_right_user[".0"]["list"][".info"]["caption"],
+                    $this->auth["username"]
+                );
             $this->navbar_elements['navbar-right'] = $this->navbar_right_user;
         } else {
             $this->navbar_elements['navbar-right'] = $this->navbar_right_guest;
