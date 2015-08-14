@@ -2,7 +2,7 @@
     <img src="{{user.avatar}}" class="img-circle" width="80px" height="80px"></img>
     <div class="caption">
         <h3>{{user.usercard.name | e}}</h3>
-        <p>{{user.usercard.description | e}}</p>
+        <p>{{user.usercard.description | e | nl2br}}</p>
     </div>
 </div>
 
