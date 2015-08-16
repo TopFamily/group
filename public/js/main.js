@@ -48,7 +48,8 @@ $(document).on('pjax:end' , function() {
         gutter: '.gutter-sizer',
         itemSelector: '.grid-item',
         percentPosition: true,
-        isResizeBound: true
+        isResizeBound: true,
+        transitionDuration: 0
     });
     $grid.imagesLoaded().progress(function() {
         $grid.masonry('layout');

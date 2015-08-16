@@ -9,3 +9,8 @@
     </div>
     {% endfor %}
 </div>
+
+<script>
+$("#main_container").removeClass("container");
+$("#main_container").addClass("container-fluid");
+</script>
