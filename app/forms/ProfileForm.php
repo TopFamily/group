@@ -38,9 +38,9 @@ class ProfileForm extends Form {
                 'message' => 'Please enter your description'
             )),
             new StringLength(array(
-                'max' => 300,
+                'max' => 1000,
                 'min' => 5,
-                'messageMaximum' => 'Description must have at most 300 characters',
+                'messageMaximum' => 'Description must have at most 1000 characters',
                 'messageMinimum' => 'Name must have at least 5 characters'
             ))
         ));
