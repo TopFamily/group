@@ -20,3 +20,7 @@ try {
 } catch (Exception $e){
     echo $e->getMessage();
 }
+    $host =$_SERVER['HTTP_HOST'];
+        if ($host == "www.topfamily.org") {
+        header("Location: http://topfamily.org");
+}
